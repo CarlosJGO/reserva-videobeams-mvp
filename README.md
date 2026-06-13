@@ -173,7 +173,7 @@ LOGIN
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/USUARIO/reserva-videobeams.git
+git clone https://github.com/CarlosJGO/reserva-videobeams-mvp.git
 ```
 
 2. Copiar la carpeta del proyecto dentro de:
