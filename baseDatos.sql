@@ -48,14 +48,14 @@ VALUES
     'administrador'
 ),
 (
-    'Carlos Gomez',
-    'carlos@uniguajira.edu.co',
+    'charlie',
+    'charlie@uniguajira.edu.co',
     '123456',
     'usuario'
 ),
 (
-    'Maria Perez',
-    'maria@uniguajira.edu.co',
+    'bety',
+    'bety@uniguajira.edu.co',
     '123456',
     'usuario'
 );
