@@ -21,7 +21,6 @@ Este proyecto corresponde a un **Producto Mínimo Viable (MVP)**, enfocado en re
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap 5
 
 ### Backend
 
