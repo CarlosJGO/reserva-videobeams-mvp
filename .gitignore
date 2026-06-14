@@ -10,6 +10,7 @@ Thumbs.db
 
 # Configuración local
 .env
+config.php
 
 # Archivos temporales
 *.tmp
