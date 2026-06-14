@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Reserva</title>
+
+    <link rel="stylesheet" href="css/nueva_reserva.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Solicitar Reserva de Videobeam</h1>
+
+        <form id="formReserva">
+
+            <div class="grupo">
+                <label for="videobeam">
+                    Videobeam
+                </label>
+
+                <select
+                    id="videobeam"
+                    name="videobeam_id"
+                    required>
+                </select>
+            </div>
+
+            <div class="grupo">
+                <label for="fecha">
+                    Fecha
+                </label>
+
+                <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    required>
+            </div>
+
+            <div class="grupo">
+                <label for="hora_inicio">
+                    Hora de inicio
+                </label>
+
+                <input
+                    type="time"
+                    id="hora_inicio"
+                    name="hora_inicio"
+                    required>
+            </div>
+
+            <div class="grupo">
+                <label for="hora_fin">
+                    Hora de finalización
+                </label>
+
+                <input
+                    type="time"
+                    id="hora_fin"
+                    name="hora_fin"
+                    required>
+            </div>
+
+            <button type="submit">
+                Solicitar Reserva
+            </button>
+
+        </form>
+
+        <div id="mensaje"></div>
+
+    </div>
+
+    <script src="js/nueva_reserva.js"></script>
+
+</body>
+
+</html>

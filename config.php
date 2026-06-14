@@ -4,7 +4,7 @@
 $server = 'localhost:3307'; // sin espacios después de ':' o da error
 $username = 'root';
 $password = '';
-$database = 'reserva_salas';
+$database = 'reserva_videobeams';
 
 try {
     $pdo  = new PDO("mysql:host=$server;dbname=$database;charset=utf8", $username, $password);
