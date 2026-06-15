@@ -19,7 +19,7 @@ async function cargarVideobeams(){
     try{
 
         const respuesta = await fetch(
-            "../../apis_usuario.php?accion=obtener_videobeams"
+            "../apis_usuario.php?accion=obtener_videobeams"
         );
 
         const resultado =
@@ -73,7 +73,7 @@ async function guardarReserva(evento){
 
     const respuesta =
         await fetch(
-            "../../apis_usuario.php",
+            "../apis_usuario.php",
             {
                 method:"POST",
                 body:datos
