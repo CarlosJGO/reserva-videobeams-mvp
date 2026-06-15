@@ -1,0 +1,56 @@
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.5);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.modal{
+    width:900px;
+    max-width:95%;
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:20px;
+}
+
+.cabecera{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.cabecera button{
+    cursor:pointer;
+    border:none;
+    background:#dc3545;
+    color:white;
+    padding:8px 12px;
+    border-radius:5px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#f2f2f2;
+}
