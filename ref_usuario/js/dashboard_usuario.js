@@ -8,9 +8,9 @@ async function cargarResumen() {
     try {
 
         const respuesta = await fetch(
-            "../apis_usuario.php?accion=resumen_usuario"
+            "apis_usuario.php?accion=resumen_usuario"
         );
-
+        
         const resultado = await respuesta.json();
 
         if (resultado.ok) {

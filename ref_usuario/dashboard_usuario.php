@@ -16,6 +16,7 @@ $nombre = $_SESSION['nombre'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Usuario</title>
     <link rel="stylesheet" href="css/dashboard_usuario.css">
+    <link rel="stylesheet" href="ver_mis_reservas/mis_reservas.css">
 </head>
 
 <body>
@@ -25,7 +26,7 @@ $nombre = $_SESSION['nombre'];
         <div class="nav-links">
             <a href="dashboard_usuario.php">Inicio</a>
             <a href="nueva_reserva/nueva_reserva.html">Nueva Reserva</a>
-            <a href="mis_reservas/mis_reservas.html">Mis Reservas</a>
+            <a href="#" onclick="mostrarMisReservas(); return false;">Mis Reservas</a>
             <a href="../login/cerrar_sesion.php">Cerrar sesión</a>
         </div>
     </nav>
@@ -56,7 +57,8 @@ $nombre = $_SESSION['nombre'];
     </main>
 
     <script src="js/dashboard_usuario.js"></script>
-
+    <script src="ver_mis_reservas/mis_reservas.js"></script>
+    <script src="js/dashboard_usuario.js"></script>
 </body>
 
 </html>

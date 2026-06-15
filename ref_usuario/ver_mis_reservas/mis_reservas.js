@@ -1,4 +1,4 @@
-const API_USUARIO = "../apis_usuario.php";
+const API_USUARIO = "apis_usuario.php";
 
 async function mostrarMisReservas() {
 
