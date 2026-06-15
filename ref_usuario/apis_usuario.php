@@ -133,6 +133,36 @@ switch($accion){
 
     break;
 
+    case 'obtener_mis_reservas':
+        $usuario_id = $_SESSION['id'];
+
+        $sql = "
+            SELECT
+                v.nombre AS videobeam,
+                r.fecha,
+                r.hora_inicio,
+                r.hora_fin,
+                r.estado
+            FROM reservas r
+            INNER JOIN videobeams v
+                ON r.videobeam_id = v.id
+            WHERE r.usuario_id = ?
+            ORDER BY r.fecha DESC, r.hora_inicio DESC
+        ";
+
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->execute([
+            $usuario_id
+        ]);
+
+        echo json_encode([
+            "ok" => true,
+            "datos" => $stmt->fetchAll(PDO::FETCH_ASSOC)
+        ]);
+
+    break;
+
     default:
 
         echo json_encode([
