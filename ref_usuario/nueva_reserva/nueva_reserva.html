@@ -11,67 +11,59 @@
 
 <body>
 
-    <div class="contenedor">
+    <div class="fondo-animado"></div>
 
-        <h1>Solicitar Reserva de Videobeam</h1>
+    <div class="contenedor-form">
 
-        <form id="formReserva">
-
-            <div class="grupo">
-                <label for="videobeam">
-                    Videobeam
-                </label>
-
-                <select
-                    id="videobeam"
-                    name="videobeam_id"
-                    required>
-                </select>
+        <div class="formulario">
+            <div class="encabezado-form">
+                <div class="icono-form">📋</div>
+                <h1>Solicitar Reserva</h1>
+                <p>Completa el formulario para reservar un videobeam</p>
             </div>
 
-            <div class="grupo">
-                <label for="fecha">
-                    Fecha
-                </label>
+            <form id="formReserva" class="form-contenido">
 
-                <input
-                    type="date"
-                    id="fecha"
-                    name="fecha"
-                    required>
-            </div>
+                <div class="grupo">
+                    <label for="videobeam">
+                        <span class="icono-campo">🎬</span> Videobeam
+                    </label>
+                    <select id="videobeam" name="videobeam_id" required>
+                        <option value="">Seleccione un videobeam</option>
+                    </select>
+                </div>
 
-            <div class="grupo">
-                <label for="hora_inicio">
-                    Hora de inicio
-                </label>
+                <div class="grupo">
+                    <label for="fecha">
+                        <span class="icono-campo">📅</span> Fecha
+                    </label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
 
-                <input
-                    type="time"
-                    id="hora_inicio"
-                    name="hora_inicio"
-                    required>
-            </div>
+                <div class="fila-dos-columnas">
+                    <div class="grupo">
+                        <label for="hora_inicio">
+                            <span class="icono-campo">🕐</span> Hora inicio
+                        </label>
+                        <input type="time" id="hora_inicio" name="hora_inicio" required>
+                    </div>
 
-            <div class="grupo">
-                <label for="hora_fin">
-                    Hora de finalización
-                </label>
+                    <div class="grupo">
+                        <label for="hora_fin">
+                            <span class="icono-campo">🕐</span> Hora fin
+                        </label>
+                        <input type="time" id="hora_fin" name="hora_fin" required>
+                    </div>
+                </div>
 
-                <input
-                    type="time"
-                    id="hora_fin"
-                    name="hora_fin"
-                    required>
-            </div>
+                <button type="submit" class="btn-enviar">
+                    ✓ Solicitar Reserva
+                </button>
 
-            <button type="submit">
-                Solicitar Reserva
-            </button>
+            </form>
 
-        </form>
-
-        <div id="mensaje"></div>
+            <div id="mensaje" class="mensaje"></div>
+        </div>
 
     </div>
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes Pendientes</title>
+
+    <link rel="stylesheet" href="visualizar.css">
+</head>
+
+<body>
+
+    <div class="fondo-animado"></div>
+
+    <div class="contenedor">
+
+        <div class="encabezado">
+            <div class="icono-titulo">⏳</div>
+            <h1>Solicitudes Pendientes</h1>
+            <p class="subtitulo">Aprueba o rechaza las reservas solicitadas por los usuarios</p>
+        </div>
+
+        <div id="cargando" class="cargando" style="display: none;">
+            <div class="spinner"></div>
+            <p>Cargando solicitudes...</p>
+        </div>
+
+        <div id="contenedor-solicitudes" class="contenedor-solicitudes">
+            <!-- Las solicitudes se cargarán aquí -->
+        </div>
+
+    </div>
+
+    <script src="visualizar.js"></script>
+
+</body>
+
+</html>

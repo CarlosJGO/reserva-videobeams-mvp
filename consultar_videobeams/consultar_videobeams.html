@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videobeams Disponibles</title>
+
+    <link rel="stylesheet" href="consultar_videobeams.css">
+</head>
+
+<body>
+
+    <div class="fondo-animado"></div>
+
+    <div class="contenedor">
+
+        <div class="encabezado">
+            <div class="icono-titulo">📽️</div>
+            <h1>Videobeams Disponibles</h1>
+            <p class="subtitulo">Consulta todos los equipos disponibles en el inventario</p>
+        </div>
+
+        <div id="cargando" class="cargando" style="display: none;">
+            <div class="spinner"></div>
+            <p>Cargando videobeams...</p>
+        </div>
+
+        <div id="contenedor-videobeams" class="contenedor-videobeams">
+            <!-- Los videobeams se cargarán aquí -->
+        </div>
+
+    </div>
+
+    <script src="consultar_videobeams.js"></script>
+
+</body>
+
+</html>
