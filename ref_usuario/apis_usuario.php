@@ -133,6 +133,31 @@ switch($accion){
 
     break;
 
+case 'resumen_usuario':
+
+        $usuario_id = $_SESSION['id'];
+
+        $sql = "
+            SELECT
+                COUNT(*) AS total,
+                SUM(estado = 'pendiente') AS pendientes,
+                SUM(estado = 'aprobada')  AS aprobadas
+            FROM reservas
+            WHERE usuario_id = ?
+        ";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$usuario_id]);
+        $datos = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        echo json_encode([
+            "ok"    => true,
+            "datos" => $datos
+        ]);
+
+    break;
+
+
     default:
 
         echo json_encode([
