@@ -1,9 +1,9 @@
 <?php
 // config.php
 
-$server = 'localhost:33065'; // sin espacios después de ':' o da error
+$server = 'localhost:3306'; // sin espacios después de ':' o da error
 $username = 'root';
-$password = '';
+$password = '12345';
 $database = 'reserva_videobeams';
 
 try {

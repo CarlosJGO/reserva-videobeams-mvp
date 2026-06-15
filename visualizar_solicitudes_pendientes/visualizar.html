@@ -11,28 +11,24 @@
 
 <body>
 
+    <div class="fondo-animado"></div>
+
     <div class="contenedor">
 
-        <h1>Solicitudes Pendientes</h1>
+        <div class="encabezado">
+            <div class="icono-titulo">⏳</div>
+            <h1>Solicitudes Pendientes</h1>
+            <p class="subtitulo">Aprueba o rechaza las reservas solicitadas por los usuarios</p>
+        </div>
 
-        <table>
+        <div id="cargando" class="cargando" style="display: none;">
+            <div class="spinner"></div>
+            <p>Cargando solicitudes...</p>
+        </div>
 
-            <thead>
-                <tr>
-                    <th>Solicitante</th>
-                    <th>Correo</th>
-                    <th>Videobeam</th>
-                    <th>Fecha</th>
-                    <th>Hora Inicio</th>
-                    <th>Hora Fin</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-
-            <tbody id="tablaSolicitudes">
-            </tbody>
-
-        </table>
+        <div id="contenedor-solicitudes" class="contenedor-solicitudes">
+            <!-- Las solicitudes se cargarán aquí -->
+        </div>
 
     </div>
 
