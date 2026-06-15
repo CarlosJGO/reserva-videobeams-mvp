@@ -1,27 +1,22 @@
 <?php
+require_once '../config.php'; // ajusta la ruta según tu estructura
 
-$conexion = new mysqli(
-    "localhost",
-    "root",
-    "",
-    "reserva_videobeams"
-);
+try {
+    $sql = "SELECT * FROM videobeams";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
 
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    $videobeams = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    header('Content-Type: application/json');
+    echo json_encode($videobeams);
+
+} catch (PDOException $e) {
+    http_response_code(500);
+
+    echo json_encode([
+        "ok" => false,
+        "error" => $e->getMessage()
+    ]);
 }
-
-$sql = "SELECT * FROM videobeams";
-
-$resultado = $conexion->query($sql);
-
-$videobeams = [];
-
-while($fila = $resultado->fetch_assoc()){
-    $videobeams[] = $fila;
-}
-
-header('Content-Type: application/json');
-echo json_encode($videobeams);
-
 ?>
