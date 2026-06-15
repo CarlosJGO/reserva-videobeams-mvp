@@ -1,5 +1,6 @@
 <?php
 session_start();
+//$_SESSION['id'] = 2;
 
 require_once '../config.php';
 
