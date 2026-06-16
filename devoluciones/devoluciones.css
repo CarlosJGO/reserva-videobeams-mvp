@@ -304,3 +304,24 @@ h1 {
     }
 }
 
+.barra-superior {
+    margin-bottom: 25px;
+}
+
+.btn-volver {
+    display: inline-block;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.btn-volver:hover {
+    transform: translateY(-3px);
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
