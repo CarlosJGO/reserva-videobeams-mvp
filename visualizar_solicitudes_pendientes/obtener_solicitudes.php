@@ -43,34 +43,75 @@ switch($accion) {
         }
     break;
 
-    case 'aprobar_solicitud':
-        $reserva_id = $_POST['reserva_id'] ?? null;
+   case 'aprobar_solicitud':
 
-        if (!$reserva_id) {
-            echo json_encode([
-                "ok" => false,
-                "mensaje" => "Datos incompletos"
-            ]);
-            exit;
+    $reserva_id = $_POST['reserva_id'] ?? null;
+
+    if (!$reserva_id) {
+        echo json_encode([
+            "ok" => false,
+            "mensaje" => "No se recibió el id de la reserva"
+        ]);
+        exit;
+    }
+
+    try {
+
+        $pdo->beginTransaction();
+
+        // Obtener videobeam asociado
+        $stmt = $pdo->prepare("
+            SELECT videobeam_id
+            FROM reservas
+            WHERE id = ?
+        ");
+
+        $stmt->execute([$reserva_id]);
+
+        $reserva = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$reserva) {
+            throw new Exception("Reserva no encontrada");
         }
 
-        try {
-            $sql = "UPDATE reservas SET estado = 'aprobada' WHERE id = ?";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$reserva_id]);
+        // Aprobar reserva
+        $stmt = $pdo->prepare("
+            UPDATE reservas
+            SET estado = 'aprobada'
+            WHERE id = ?
+        ");
 
-            echo json_encode([
-                "ok" => true,
-                "mensaje" => "Solicitud aprobada exitosamente"
-            ]);
+        $stmt->execute([$reserva_id]);
 
-        } catch (Exception $e) {
-            echo json_encode([
-                "ok" => false,
-                "mensaje" => "Error al aprobar solicitud: " . $e->getMessage()
-            ]);
+        // Cambiar estado del videobeam
+        $stmt = $pdo->prepare("
+            UPDATE videobeams
+            SET estado = 'prestado'
+            WHERE id = ?
+        ");
+
+        $stmt->execute([$reserva['videobeam_id']]);
+
+        $pdo->commit();
+
+        echo json_encode([
+            "ok" => true,
+            "mensaje" => "Reserva aprobada y videobeam marcado como prestado"
+        ]);
+
+    } catch (Exception $e) {
+
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
         }
-    break;
+
+        echo json_encode([
+            "ok" => false,
+            "mensaje" => $e->getMessage()
+        ]);
+    }
+
+break;
 
     case 'rechazar_solicitud':
         $reserva_id = $_POST['reserva_id'] ?? null;
